@@ -17,7 +17,7 @@ export class GsapService {
   }
 
   public circleSpinny(e) {
-    TweenMax.from(e, 1.5, {
+    TweenMax.from(e, 0.5, {
       css: { scale: 0.05, opacity: 0, rotation: 180 },
       ease: Quad.easeInOut,
     }),
@@ -25,10 +25,12 @@ export class GsapService {
       -400;
   }
 
-  public clickSpin(e, rotAng) {
-    TweenMax.to(e, 1.5, {
-      css: { rotation: rotAng },
-      ease: Quad.easeIn,
+  public clickSpin(e) {
+    TweenMax.to(e, 0.5, {
+      css: {
+        rotation: '-=72',
+      },
+      ease: Power2.easeNone,
     }),
       400,
       -400;

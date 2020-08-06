@@ -35,6 +35,11 @@ import { GsapService } from '../gsap.service';
 export class ChartComponent implements OnInit {
   showMod1 = true;
   showMod2 = false;
+  showMod3 = false;
+  showMod4 = false;
+  showMod5 = false;
+
+  anim = this._gsapService;
 
   constructor(private _gsapService: GsapService) {} // inject service
 
@@ -43,22 +48,35 @@ export class ChartComponent implements OnInit {
   }
 
   public fOpeningAnim() {
-    const anim = this._gsapService;
-    anim.circleSpinny('.centrepoint');
+    this.anim.circleSpinny('.centrepoint');
   }
 
   show1() {
     this.showMod1 = true;
     this.showMod2 = false;
+    this.showMod3 = false;
+    this.showMod4 = false;
+    this.showMod5 = false;
 
-    const anim = this._gsapService;
-    anim.clickSpin('.centrepoint', 0);
+    this.anim.clickSpin('.centrepoint');
   }
   show2() {
     this.showMod1 = false;
     this.showMod2 = true;
+    this.showMod3 = false;
+    this.showMod4 = false;
+    this.showMod5 = false;
 
-    const anim = this._gsapService;
-    anim.clickSpin('.centrepoint', -72);
+    this.anim.clickSpin('.centrepoint');
+  }
+
+  show3() {
+    this.anim.clickSpin('.centrepoint');
+  }
+  show4() {
+    this.anim.clickSpin('.centrepoint');
+  }
+  show5() {
+    this.anim.clickSpin('.centrepoint');
   }
 }
