@@ -24,4 +24,13 @@ export class GsapService {
       400,
       -400;
   }
+
+  public clickSpin(e, rotAng) {
+    TweenMax.to(e, 1.5, {
+      css: { rotation: rotAng },
+      ease: Quad.easeIn,
+    }),
+      400,
+      -400;
+  }
 }

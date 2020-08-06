@@ -52,9 +52,13 @@ export class ChartComponent implements OnInit {
     this.showMod2 = false;
 
     const anim = this._gsapService;
+    anim.clickSpin('.centrepoint', 0);
   }
   show2() {
     this.showMod1 = false;
     this.showMod2 = true;
+
+    const anim = this._gsapService;
+    anim.clickSpin('.centrepoint', -72);
   }
 }
