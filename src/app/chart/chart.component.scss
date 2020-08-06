@@ -1,0 +1,114 @@
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.chart-pie {
+  max-width: 30%;
+}
+
+.left {
+  width: 50%;
+  float: left;
+  overflow: auto;
+}
+
+.right {
+  width: 50%;
+  float: left;
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.centrepoint {
+  width: 373.0876px;
+  height: 373.0876px;
+  background: #efefef;
+  margin: 200px auto;
+  border-radius: 50%;
+  position: relative;
+}
+
+div[class*="quadrant"] {
+  position: absolute;
+  transition: 0.1s ease;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.2);
+    z-index: 99;
+
+    svg path {
+      fill: green;
+    }
+  }
+}
+
+svg {
+  fill: currentColor;
+}
+
+.quadrant1 {
+  top: 0;
+  left: 187.3738px;
+  width: 176.533px;
+  height: 140.095px;
+
+  svg {
+    color: mediumseagreen;
+  }
+}
+
+.q11 {
+  fill: yellow;
+}
+
+.quadrant2 {
+  top: 129.8357px;
+  left: 275.4456px;
+  width: 97.6419px;
+  height: 207.2679px;
+}
+
+.quadrant3 {
+  bottom: 0;
+  left: 77.7088px;
+  width: 218.079px;
+  height: 64.5045px;
+}
+
+.quadrant4 {
+  left: 0;
+  top: 129.6439px;
+  width: 98.3022px;
+  height: 207.8043px;
+}
+
+.quadrant5 {
+  top: 0;
+  left: 10px;
+  width: 177.1317px;
+  height: 140.0954px;
+}
+
+.c-label {
+  position: absolute;
+}
+
+.c-label--m1 {
+  top: 10px;
+  right: 0;
+}
+
+.c-label--m2 {
+  top: 250px;
+  right: -60px;
+}
+
+// .c-quad {
+//   width: 100%;
+//   height: 100%;
+//   position: relative;
+//   background: yellow;
+// }
