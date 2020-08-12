@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { trigger, animate, transition, style } from '@angular/animations';
 import { GsapService } from '../gsap.service';
+import { gsap, Power2, Elastic, Quad, TweenMax } from 'gsap/all';
 
 @Component({
   selector: 'app-chart',
@@ -43,8 +44,41 @@ export class ChartComponent implements OnInit {
 
   constructor(private _gsapService: GsapService) {} // inject service
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.fOpeningAnim();
+
+    let circleSegments = document.querySelectorAll('.c-quad');
+
+    let numSections = circleSegments.length;
+
+    let currIndex = 0;
+    let animate = gsap.to({}, {});
+
+    circleSegments.forEach((segment, index) => {
+      segment.addEventListener('click', () => {
+        if (!animate.isActive() && index !== currIndex) {
+          let toGo = index - currIndex;
+
+          if (toGo < 1) {
+            toGo = numSections + toGo;
+          }
+
+          let spinAngle = toGo * 72;
+
+          animate = gsap.to('.centrepoint', {
+            rotation: '-=' + spinAngle,
+            ease: 'none',
+          });
+
+          animate = gsap.to('.c-label', {
+            rotation: '+=' + spinAngle,
+            ease: 'none',
+          });
+
+          currIndex = index;
+        }
+      });
+    });
   }
 
   public fOpeningAnim() {
@@ -57,8 +91,6 @@ export class ChartComponent implements OnInit {
     this.showMod3 = false;
     this.showMod4 = false;
     this.showMod5 = false;
-
-    this.anim.clickSpin('.centrepoint');
   }
   show2() {
     this.showMod1 = false;
@@ -66,17 +98,9 @@ export class ChartComponent implements OnInit {
     this.showMod3 = false;
     this.showMod4 = false;
     this.showMod5 = false;
-
-    this.anim.clickSpin('.centrepoint');
   }
 
-  show3() {
-    this.anim.clickSpin('.centrepoint');
-  }
-  show4() {
-    this.anim.clickSpin('.centrepoint');
-  }
-  show5() {
-    this.anim.clickSpin('.centrepoint');
-  }
+  show3() {}
+  show4() {}
+  show5() {}
 }

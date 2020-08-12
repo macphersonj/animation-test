@@ -27,9 +27,8 @@ export class GsapService {
 
   public clickSpin(e) {
     TweenMax.to(e, 0.5, {
-      css: {
-        rotation: '-=72',
-      },
+      rotation: '-=72_ccw',
+
       ease: Power2.easeNone,
     }),
       400,

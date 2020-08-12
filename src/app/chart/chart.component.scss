@@ -10,7 +10,7 @@
 .left {
   width: 50%;
   float: left;
-  overflow: auto;
+  overflow: visible;
 }
 
 .right {
@@ -104,6 +104,21 @@ svg {
 .c-label--m2 {
   top: 250px;
   right: -60px;
+}
+
+.c-label--m3 {
+  top: 400px;
+  right: 160px;
+}
+
+.c-label--m4 {
+  top: 250px;
+  left: -70px;
+}
+
+.c-label--m5 {
+  top: 10px;
+  left: 0;
 }
 
 // .c-quad {
